@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="お問い合わせ">
+
+  <div class="page-hero">
+    <h1>お問い合わせ</h1>
+    <p>見学のご相談・ご質問はこちらから</p>
+  </div>
+
+  <section class="section">
+    <div class="container" style="max-width:680px;">
+
+      <p style="margin-bottom:32px; text-align:center; color:var(--color-text-light);">
+        サービスに関するご質問、見学のご希望など、お気軽にお問い合わせください。<br/>
+        担当者より3営業日以内にご連絡いたします。
+      </p>
+
+      <form name="contact" method="POST" data-netlify="true" action="/inquiry/thanks">
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="form-group">
+          <label for="name">お名前 <span style="color:red;">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="例：山田 太郎" />
+        </div>
+        <div class="form-group">
+          <label for="phone">電話番号</label>
+          <input type="tel" id="phone" name="phone" placeholder="例：0984-XX-XXXX" />
+        </div>
+        <div class="form-group">
+          <label for="email">メールアドレス <span style="color:red;">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="例：example@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="subject">お問い合わせ種別</label>
+          <select id="subject" name="subject">
+            <option value="">選択してください</option>
+            <option>デイサービスについて</option>
+            <option>グループホームについて</option>
+            <option>採用・求人について</option>
+            <option>見学希望</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">お問い合わせ内容 <span style="color:red;">*</span></label>
+          <textarea id="message" name="message" required placeholder="ご質問・ご要望をご記入ください"></textarea>
+        </div>
+        <div style="text-align:center;">
+          <button type="submit" class="form-submit">送信する</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+</Layout>

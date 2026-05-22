@@ -1,17 +1,81 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
+<Layout title="ホーム">
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <!-- ヒーロー -->
+  <section class="hero">
+    <div class="container">
+      <h1>専門スタッフで<br/>安心の一日を</h1>
+      <p>家族みたいなふれあいで、安心して生活するための<br/>環境づくりのお手伝いをいたします。</p>
+      <a href="/inquiry" class="btn">お問い合わせ</a>
+      <a href="/dayservice" class="btn btn-outline">サービスを見る</a>
+    </div>
+  </section>
+
+  <!-- サービス紹介 -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">サービス案内</h2>
+      <p class="section-subtitle">地域の皆さまに寄り添った介護サービスを提供しています</p>
+      <div class="card-grid">
+        <a href="/dayservice" class="card">
+          <div class="card-body">
+            <div class="card-icon">🌸</div>
+            <h3>デイサービス</h3>
+            <p>専門スタッフによる日帰りサービス。レクリエーションや入浴、食事を通じて充実した一日をお過ごしいただけます。</p>
+          </div>
+        </a>
+        <a href="/grouphome" class="card">
+          <div class="card-body">
+            <div class="card-icon">🏠</div>
+            <h3>グループホーム</h3>
+            <p>認知症の方が共同生活を送る住まい。少人数で家庭的な雰囲気のなか、専門スタッフがサポートします。</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 新着情報 -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">新着情報</h2>
+      <p class="section-subtitle">お知らせ・イベント情報をお届けします</p>
+      <ul class="news-list">
+        <li class="news-item">
+          <span class="news-date">2024.01.15</span>
+          <span class="news-tag">お知らせ</span>
+          <a href="/news" class="news-title">年末年始の営業について</a>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2024.01.08</span>
+          <span class="news-tag">イベント</span>
+          <a href="/news" class="news-title">新春レクリエーションを開催しました</a>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2023.12.20</span>
+          <span class="news-tag">お知らせ</span>
+          <a href="/news" class="news-title">クリスマス会を開催しました</a>
+        </li>
+      </ul>
+      <div style="text-align:center; margin-top:32px;">
+        <a href="/news" class="btn">新着情報をもっと見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 採用情報バナー -->
+  <section class="section section-alt">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">一緒に働きませんか？</h2>
+      <p class="section-subtitle">スタッフを随時募集しています</p>
+      <a href="/jobs" class="btn">求人票を見る</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.card { display: block; text-decoration: none; color: inherit; }
+</style>

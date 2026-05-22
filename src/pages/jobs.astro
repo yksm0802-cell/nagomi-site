@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="求人票">
+
+  <div class="page-hero">
+    <h1>求人票</h1>
+    <p>一緒に働くスタッフを募集しています</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="job-card" style="background:white; border-radius:12px; box-shadow:var(--shadow); padding:40px; margin-bottom:40px; border-left:6px solid var(--color-primary);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;">
+          <span class="badge badge-job" style="font-size:14px; padding:6px 16px;">正社員</span>
+          <h2 style="font-size:22px; color:var(--color-primary);">介護職員（デイサービス）</h2>
+        </div>
+        <table class="info-table">
+          <tr><th>仕事内容</th><td>デイサービス利用者への介護サービス全般（入浴介助・食事介助・レクリエーション補助など）</td></tr>
+          <tr><th>雇用形態</th><td>正社員・パート（応相談）</td></tr>
+          <tr><th>勤務地</th><td>宮崎県小林市（本社・事業所）</td></tr>
+          <tr><th>勤務時間</th><td>8:00〜17:30（シフト制） ※パートは応相談</td></tr>
+          <tr><th>給与</th><td>月給 160,000円〜（経験・資格により優遇）<br/>パート 時給 900円〜</td></tr>
+          <tr><th>休日・休暇</th><td>週休2日制、有給休暇、年末年始</td></tr>
+          <tr><th>福利厚生</th><td>社会保険完備、交通費支給、資格取得支援</td></tr>
+          <tr><th>必要資格</th><td>介護職員初任者研修以上（未経験・無資格者も応相談）</td></tr>
+          <tr><th>応募方法</th><td><a href="/inquiry">お問い合わせフォーム</a>または電話にてご連絡ください</td></tr>
+        </table>
+      </div>
+
+      <div class="job-card" style="background:white; border-radius:12px; box-shadow:var(--shadow); padding:40px; margin-bottom:40px; border-left:6px solid var(--color-accent);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;">
+          <span class="badge badge-job" style="font-size:14px; padding:6px 16px;">正社員・パート</span>
+          <h2 style="font-size:22px; color:var(--color-primary);">介護職員（グループホーム）</h2>
+        </div>
+        <table class="info-table">
+          <tr><th>仕事内容</th><td>グループホーム入居者への生活支援・介護全般（食事・入浴・排泄介助、日常生活のサポート）</td></tr>
+          <tr><th>雇用形態</th><td>正社員・パート</td></tr>
+          <tr><th>勤務地</th><td>宮崎県小林市</td></tr>
+          <tr><th>勤務時間</th><td>7:00〜16:00 / 16:00〜翌9:00（夜勤あり）</td></tr>
+          <tr><th>給与</th><td>月給 165,000円〜（夜勤手当別途支給）<br/>パート 時給 900円〜</td></tr>
+          <tr><th>休日・休暇</th><td>4週8休制、有給休暇</td></tr>
+          <tr><th>福利厚生</th><td>社会保険完備、交通費支給、資格取得支援、夜勤手当</td></tr>
+          <tr><th>必要資格</th><td>介護職員初任者研修以上（未経験可）</td></tr>
+          <tr><th>応募方法</th><td><a href="/inquiry">お問い合わせフォーム</a>または電話にてご連絡ください</td></tr>
+        </table>
+      </div>
+
+      <div style="background:var(--color-primary-light); border-radius:12px; padding:32px; text-align:center;">
+        <h3 style="color:var(--color-primary); margin-bottom:12px;">見学・相談も随時受け付けています</h3>
+        <p style="margin-bottom:20px; color:var(--color-text-light);">まずはお気軽にお問い合わせください。</p>
+        <a href="/inquiry" class="btn">お問い合わせ・応募はこちら</a>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const news = await getCollection('news');
+  return news.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const dateStr = new Date(post.data.date).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<Layout title={post.data.title}>
+
+  <div class="page-hero">
+    <h1>{post.data.title}</h1>
+    <p>{dateStr} ／ {post.data.category}</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="post-body">
+        <Content />
+      </div>
+      <div style="margin-top:48px; text-align:center;">
+        <a href="/news" class="btn">← 新着情報一覧に戻る</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.post-body { max-width: 720px; margin: 0 auto; }
+.post-body h2 { font-size: 22px; color: var(--color-primary); margin: 32px 0 12px; }
+.post-body h3 { font-size: 18px; margin: 24px 0 8px; }
+.post-body p { margin-bottom: 16px; }
+.post-body img { border-radius: 8px; margin: 24px 0; }
+</style>

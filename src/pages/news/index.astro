@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allNews = await getCollection('news');
+const sortedNews = allNews.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+<Layout title="新着情報">
+
+  <div class="page-hero">
+    <h1>新着情報</h1>
+    <p>お知らせ・イベント情報</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      {sortedNews.length === 0 ? (
+        <p style="text-align:center; color:var(--color-text-light); padding:48px 0;">
+          まだ記事がありません。
+        </p>
+      ) : (
+        <ul class="news-list">
+          {sortedNews.map((post) => (
+            <li class="news-item">
+              <span class="news-date">{new Date(post.data.date).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '.')}</span>
+              <span class="news-tag">{post.data.category}</span>
+              <a href={`/news/${post.id}`} class="news-title">{post.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+
+</Layout>
