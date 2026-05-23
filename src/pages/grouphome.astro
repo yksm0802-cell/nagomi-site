@@ -5,36 +5,100 @@ import Layout from '../layouts/Layout.astro';
 
   <div class="page-hero">
     <h1>グループホーム</h1>
-    <p>家庭的な雰囲気のなかで、穏やかな日々を</p>
+    <p>なごみ・ひなた — 地域密着型認知症対応型共同生活介護</p>
   </div>
 
   <section class="section">
-    <div class="container">
-      <h2 class="section-title">グループホームとは</h2>
-      <p class="section-subtitle"></p>
-      <p style="max-width:720px; margin:0 auto 48px; text-align:center; line-height:2;">
-        認知症と診断された方が、専門スタッフのサポートのもとで共同生活を送る住まいです。少人数で家庭的な雰囲気の中、日常生活の自立を支援しながら、穏やかで充実した生活を提供します。
+    <div class="container" style="max-width:800px;">
+      <p style="text-align:center; font-size:16px; line-height:2; margin-bottom:48px;">
+        グループホームとは、認知症の高齢者が、少人数（5〜9人）で専門の職員と共同して、食事の支度や掃除、洗濯、買い物などを、家庭的な雰囲気の中で、楽しく安心して日常生活を送ることによって、認知症状の進行を緩やかにし、その人らしい暮らしを提供するものです。
       </p>
 
-      <div class="card-grid">
-        <div class="card"><div class="card-body"><div class="card-icon">🏡</div><h3>家庭的な環境</h3><p>少人数（5〜9名）で生活するため、アットホームな雰囲気の中で毎日を過ごせます。</p></div></div>
-        <div class="card"><div class="card-body"><div class="card-icon">👩‍⚕️</div><h3>専門ケア</h3><p>認知症ケアの専門知識を持つスタッフが、24時間体制でサポートします。</p></div></div>
-        <div class="card"><div class="card-body"><div class="card-icon">🌻</div><h3>自立支援</h3><p>できることはご自身で行いながら、必要な部分をサポートする自立支援の考え方を大切にしています。</p></div></div>
+      <!-- 2施設の情報 -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin-bottom:64px;">
+        <div style="background:white; border-radius:12px; box-shadow:var(--shadow); padding:32px; border-top:4px solid var(--color-primary);">
+          <h3 style="color:var(--color-primary); font-size:20px; margin-bottom:16px;">グループホームなごみ</h3>
+          <table class="info-table">
+            <tr><th>住所</th><td>小林市南西方6257番地65</td></tr>
+            <tr><th>電話/FAX</th><td><a href="tel:0984-27-2605">0984-27-2605</a></td></tr>
+            <tr><th>営業時間</th><td>24時間</td></tr>
+            <tr><th>営業日</th><td>年中無休</td></tr>
+            <tr><th>定員</th><td>9名</td></tr>
+            <tr><th>事業者番号</th><td>4590500049</td></tr>
+          </table>
+        </div>
+        <div style="background:white; border-radius:12px; box-shadow:var(--shadow); padding:32px; border-top:4px solid var(--color-accent);">
+          <h3 style="color:var(--color-primary); font-size:20px; margin-bottom:16px;">グループホームひなた</h3>
+          <table class="info-table">
+            <tr><th>住所</th><td>小林市南西方6286番地1</td></tr>
+            <tr><th>電話</th><td><a href="tel:0984-27-2830">0984-27-2830</a></td></tr>
+            <tr><th>営業時間</th><td>24時間</td></tr>
+            <tr><th>営業日</th><td>年中無休</td></tr>
+            <tr><th>定員</th><td>9名</td></tr>
+            <tr><th>事業者番号</th><td>4590500106</td></tr>
+          </table>
+        </div>
       </div>
 
-      <div style="margin-top:64px;">
-        <h2 class="section-title">ご利用について</h2>
-        <p class="section-subtitle"></p>
-        <table class="info-table">
-          <tr><th>対象者</th><td>認知症と診断された方（要支援2〜要介護5）</td></tr>
-          <tr><th>定員</th><td>（定員）名</td></tr>
-          <tr><th>費用</th><td>介護保険自己負担分＋居住費・食費・日常生活費等</td></tr>
-          <tr><th>所在地</th><td>宮崎県小林市</td></tr>
-        </table>
+      <h2 class="section-title">ご利用について</h2>
+      <p class="section-subtitle"></p>
+      <table class="info-table" style="margin-bottom:64px;">
+        <tr><th>対象者</th><td>要支援2または要介護1〜5の方（認知症と診断された方）</td></tr>
+        <tr><th>サービス実施地域</th><td>小林市（地域密着型）</td></tr>
+        <tr><th>費用</th><td>介護保険自己負担分（1〜3割）＋居住費・食費・水道光熱費など</td></tr>
+        <tr><th>短期入所</th><td>空きベッドを利用した短期入所・緊急時の短期入所も受け入れ可能</td></tr>
+      </table>
+
+      <h2 class="section-title">生活環境の特長</h2>
+      <p class="section-subtitle"></p>
+      <div class="card-grid" style="margin-bottom:48px;">
+        <div class="card"><div class="card-body"><div class="card-icon">🏔️</div><h3>霧島連山の絶景</h3><p>霧島連山が一望できるすばらしい景観。どこからでも太陽の温かい陽がたっぷり差し込み、温もりと安らぎを感じさせます。</p></div></div>
+        <div class="card"><div class="card-body"><div class="card-icon">🌱</div><h3>家庭菜園・共同生活</h3><p>天気のいい日は季節の野菜を育て、収穫の喜びを共に味わい、一緒に調理。入居者と職員が「ひとつの家族」のような馴染みの関係を築きます。</p></div></div>
+        <div class="card"><div class="card-body"><div class="card-icon">🛁</div><h3>ゆっくりとした入浴</h3><p>外の景色をながめながらゆっくり入浴。車椅子でも楽々使用できるトイレも完備。外出・外泊・通院も可能です。</p></div></div>
       </div>
 
-      <div style="text-align:center; margin-top:48px;">
-        <a href="/inquiry" class="btn">見学・お問い合わせはこちら</a>
+      <h2 class="section-title">入居申し込みについて</h2>
+      <p class="section-subtitle"></p>
+      <div style="background:var(--color-primary-light); border-radius:12px; padding:28px; line-height:2; font-size:15px; margin-bottom:48px;">
+        <p>グループホームは地域密着型サービスのため、<strong>小林市内に居住している方のみ</strong>入居可能です。</p>
+        <p style="margin-top:8px;">入居の申し込みやお問い合わせは、直接ご相談いただくか、担当ケアマネージャーさんにご相談ください。</p>
+        <p style="margin-top:8px;">申し込みの後、事前面接をさせていただき、入居可能かどうかを確認いたします。</p>
+      </div>
+
+      <div style="text-align:center;">
+        <p style="font-size:22px; font-weight:700; color:var(--color-primary); margin-bottom:8px;">📞 なごみ：0984-27-2605 ／ ひなた：0984-27-2830</p>
+        <p style="color:var(--color-text-light); margin-bottom:24px; font-size:14px;">まずはお電話またはメールにてご相談ください</p>
+        <a href="/inquiry" class="btn">メールでお問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 令和6年度外部評価 -->
+  <section class="section section-alt">
+    <div class="container" style="max-width:800px;">
+      <h2 class="section-title">令和6年度 外部評価・委員会報告</h2>
+      <p class="section-subtitle">グループホームなごみ 外部評価報告</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px;">
+        <div style="background:white; border-radius:8px; padding:20px; box-shadow:var(--shadow);">
+          <h4 style="color:var(--color-primary); margin-bottom:8px;">①感染症対策委員会</h4>
+          <p style="font-size:14px; color:var(--color-text-light);">BCP研修として研修会や訓練を実施しています。</p>
+        </div>
+        <div style="background:white; border-radius:8px; padding:20px; box-shadow:var(--shadow);">
+          <h4 style="color:var(--color-primary); margin-bottom:8px;">②コンプライアンス委員会</h4>
+          <p style="font-size:14px; color:var(--color-text-light);">職業倫理、虐待防止、あらゆるハラスメント対策等について研修を行います。</p>
+        </div>
+        <div style="background:white; border-radius:8px; padding:20px; box-shadow:var(--shadow);">
+          <h4 style="color:var(--color-primary); margin-bottom:8px;">③生産性向上委員会</h4>
+          <p style="font-size:14px; color:var(--color-text-light);">職場環境改善、介護職員等の離職防止対策等について研修します。</p>
+        </div>
+        <div style="background:white; border-radius:8px; padding:20px; box-shadow:var(--shadow);">
+          <h4 style="color:var(--color-primary); margin-bottom:8px;">④虐待防止・身体拘束抑制委員会</h4>
+          <p style="font-size:14px; color:var(--color-text-light);">高齢者虐待防止及び身体拘束抑制禁止に関する取り組みを実施。</p>
+        </div>
+        <div style="background:white; border-radius:8px; padding:20px; box-shadow:var(--shadow);">
+          <h4 style="color:var(--color-primary); margin-bottom:8px;">⑤災害対策委員会</h4>
+          <p style="font-size:14px; color:var(--color-text-light);">避難訓練及び救急法蘇生法の研修を実施しました。</p>
+        </div>
       </div>
     </div>
   </section>

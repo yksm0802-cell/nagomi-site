@@ -5,35 +5,121 @@ import Layout from '../layouts/Layout.astro';
 
   <div class="page-hero">
     <h1>デイサービス</h1>
-    <p>専門スタッフとともに、充実した一日を</p>
+    <p>純和風のちっちゃなデイサービス 和（なごみ）</p>
   </div>
 
   <section class="section">
-    <div class="container">
-      <h2 class="section-title">サービス内容</h2>
-      <p class="section-subtitle">心身の健康維持と豊かな生活をサポートします</p>
-      <div class="card-grid">
-        <div class="card"><div class="card-body"><div class="card-icon">🛁</div><h3>入浴サービス</h3><p>安全・安心な入浴介助を行います。お体の状態に合わせた個別対応が可能です。</p></div></div>
-        <div class="card"><div class="card-body"><div class="card-icon">🍱</div><h3>食事サービス</h3><p>栄養バランスを考えた食事を提供します。嚥下が難しい方への対応食もご用意しています。</p></div></div>
-        <div class="card"><div class="card-body"><div class="card-icon">🎨</div><h3>レクリエーション</h3><p>季節のイベントや手工芸、体操など、楽しみながら心身を活性化するプログラムを実施します。</p></div></div>
-        <div class="card"><div class="card-body"><div class="card-icon">🚌</div><h3>送迎サービス</h3><p>ご自宅から施設まで安全に送迎いたします。お気軽にご相談ください。</p></div></div>
-      </div>
+    <div class="container" style="max-width:800px;">
+      <p style="text-align:center; font-size:16px; line-height:2; margin-bottom:48px;">
+        「かゆいところにすぐ手が届く」サービスをモットーに、職員が目配り、気配り、手配り、そして心配りをしながら、ご利用者様のすぐ近くで毎日太陽のような笑顔で対応しています。
+      </p>
 
-      <div style="margin-top:64px;">
-        <h2 class="section-title">ご利用について</h2>
-        <p class="section-subtitle"></p>
-        <table class="info-table">
-          <tr><th>対象者</th><td>要介護認定を受けた方（要支援1〜要介護5）</td></tr>
-          <tr><th>営業時間</th><td>8:00〜17:30（送迎時間は別途ご相談）</td></tr>
-          <tr><th>定員</th><td>（定員）名</td></tr>
-          <tr><th>費用</th><td>介護保険自己負担分（1〜3割）＋食費・日用品費等</td></tr>
-        </table>
-      </div>
+      <h2 class="section-title">施設情報</h2>
+      <p class="section-subtitle"></p>
+      <table class="info-table" style="margin-bottom:64px;">
+        <tr><th>施設名</th><td>デイサービスセンター 和（なごみ）</td></tr>
+        <tr><th>住所</th><td>小林市南西方6257番地33</td></tr>
+        <tr><th>電話</th><td><a href="tel:0984-27-2820">0984-27-2820</a></td></tr>
+        <tr><th>営業時間</th><td>8:30〜17:30</td></tr>
+        <tr><th>営業日</th><td>月曜日〜土曜日（祝祭日も営業）<br/>※12月30日〜1月3日は休み</td></tr>
+        <tr><th>利用定員</th><td>1日最大18名</td></tr>
+        <tr><th>事業区分</th><td>地域密着型通所介護、介護予防通所介護</td></tr>
+      </table>
 
-      <div style="text-align:center; margin-top:48px;">
-        <a href="/inquiry" class="btn">見学・お問い合わせはこちら</a>
+      <h2 class="section-title">スタッフ体制</h2>
+      <p class="section-subtitle"></p>
+      <table class="info-table" style="margin-bottom:64px;">
+        <tr><th>生活相談員</th><td>2名（介護福祉士）</td></tr>
+        <tr><th>介護職員</th><td>5名（介護福祉士及び初任者研修修了者）</td></tr>
+        <tr><th>看護師・機能訓練指導員</th><td>3名</td></tr>
+      </table>
+
+      <h2 class="section-title">料金について</h2>
+      <p class="section-subtitle">利用時間帯に伴う利用料金は、介護報酬の告示上の額で1割〜3割の負担となります</p>
+
+      <table class="info-table" style="margin-bottom:32px;">
+        <thead>
+          <tr>
+            <th>加算名称</th>
+            <th>介護報酬額</th>
+            <th>1割負担</th>
+            <th>2割負担</th>
+            <th>3割負担</th>
+            <th>算定</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>入浴介助加算</td>
+            <td>400円</td>
+            <td>40円</td>
+            <td>80円</td>
+            <td>120円</td>
+            <td>入浴介助を実施した日数</td>
+          </tr>
+          <tr>
+            <td>送迎を行わない場合の減算</td>
+            <td>-470円</td>
+            <td>-47円</td>
+            <td>-94円</td>
+            <td>-141円</td>
+            <td>片道につき</td>
+          </tr>
+          <tr>
+            <td>サービス提供体制強化加算</td>
+            <td>60円</td>
+            <td>6円</td>
+            <td>12円</td>
+            <td>18円</td>
+            <td>サービス提供日数</td>
+          </tr>
+          <tr>
+            <td>介護職員処遇改善加算Ⅱ</td>
+            <td colspan="4">所定単位の9.0%を算定</td>
+            <td>1月につき</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="background:var(--color-primary-light); border-radius:12px; padding:24px; margin-bottom:48px; font-size:14px; line-height:2;">
+        <strong>その他の費用について</strong>
+        <ul style="padding-left:20px; margin-top:8px;">
+          <li>① 送迎費：徴収いたしません（ご家族送迎の場合は介護報酬の額より減算されます）</li>
+          <li>② キャンセル料：ご利用前日の午後2時までにご連絡いただけない場合は食事代のみキャンセル不可</li>
+          <li>③ 食事の提供に要する費用：600円（1食当り・おやつ代含む）</li>
+          <li>④ おむつ代：実費相当</li>
+          <li>⑤ 日常生活費：実費相当</li>
+        </ul>
       </div>
     </div>
   </section>
 
+  <!-- ミニデイサービス -->
+  <section class="section section-alt" id="minidayservice">
+    <div class="container" style="max-width:800px;">
+      <h2 class="section-title">ミニデイサービス</h2>
+      <p class="section-subtitle">あったかで、家族みたいなふれあいと笑顔を</p>
+      <p style="text-align:center; line-height:2; margin-bottom:32px;">
+        笑顔と話に花が咲き、みんなでいっしょに和みましょう。小規模だからこそできる、きめ細やかなサービスを提供しています。
+      </p>
+      <div style="text-align:center;">
+        <a href="/inquiry" class="btn">詳細はお問い合わせください</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">見学・お問い合わせ</h2>
+      <p style="margin-bottom:24px; color:var(--color-text-light);">サービスについてのご質問・見学のご希望はお気軽にどうぞ</p>
+      <p style="font-size:22px; font-weight:700; color:var(--color-primary); margin-bottom:8px;">📞 0984-27-2820</p>
+      <p style="color:var(--color-text-light); margin-bottom:24px; font-size:14px;">営業時間 9:00〜19:00</p>
+      <a href="/inquiry" class="btn">メールでお問い合わせ</a>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+.info-table thead th { background: var(--color-primary); color: white; }
+</style>

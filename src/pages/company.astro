@@ -11,43 +11,92 @@ import Layout from '../layouts/Layout.astro';
   <section class="section">
     <div class="container">
       <table class="info-table">
-        <tr><th>会社名</th><td>株式会社和福祉サービス</td></tr>
-        <tr><th>所在地</th><td>〒886-XXXX 宮崎県小林市○○○</td></tr>
-        <tr><th>電話番号</th><td>0984-XX-XXXX</td></tr>
-        <tr><th>FAX</th><td>0984-XX-XXXX</td></tr>
-        <tr><th>設立</th><td>（設立年）</td></tr>
-        <tr><th>代表者</th><td>代表取締役 （氏名）</td></tr>
-        <tr><th>事業内容</th><td>デイサービス、グループホーム、ミニデイサービスの運営</td></tr>
-        <tr><th>従業員数</th><td>（人数）名</td></tr>
+        <tr><th>会社名</th><td>株式会社　和福祉サービス</td></tr>
+        <tr><th>代表</th><td>小倉　和也</td></tr>
+        <tr><th>住所</th><td>〒886-0005 宮崎県小林市大字南西方6257番地33</td></tr>
+        <tr><th>電話番号</th><td><a href="tel:0984-27-2820">0984-27-2820</a></td></tr>
+        <tr><th>FAX番号</th><td>0984-27-1670</td></tr>
+        <tr><th>メール</th><td><a href="mailto:info@nagomi-fukushi.co.jp">info@nagomi-fukushi.co.jp</a></td></tr>
+        <tr><th>営業時間</th><td>9:00〜19:00</td></tr>
+        <tr><th>定休日</th><td>不定休</td></tr>
+        <tr><th>アクセス</th><td>吉都線 西小林駅から車で3分 ／ 駐車場あり</td></tr>
+        <tr><th>事業内容</th><td>地域密着型通所介護（デイサービス）、認知症対応型共同生活介護（グループホーム）、地域交流施設（元気村なごみ庵）</td></tr>
       </table>
+    </div>
+  </section>
 
-      <div style="margin-top:64px;">
-        <h2 class="section-title">理念・方針</h2>
-        <p class="section-subtitle">私たちが大切にしていること</p>
-        <div class="card-grid">
-          <div class="card">
-            <div class="card-body">
-              <div class="card-icon">❤️</div>
-              <h3>家族のような温かさで</h3>
-              <p>利用者様お一人おひとりに寄り添い、家族みたいなふれあいを大切にします。</p>
-            </div>
+  <!-- 基本理念 -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">基本理念</h2>
+      <p class="section-subtitle">和福祉サービス地域密着型サービス 基本理念</p>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-icon">🏘️</div>
+            <h3>地域の寄りどころに</h3>
+            <p>ホームが地域の寄りどころとなり、地域住民に愛される福祉拠点を目指します。</p>
           </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="card-icon">🌿</div>
-              <h3>安心できる環境づくり</h3>
-              <p>専門スタッフが連携し、安全で安心できる生活環境を整えます。</p>
-            </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="card-icon">🌿</div>
+            <h3>寄り添いケアの実践</h3>
+            <p>ゆっくり、ゆったりした時を過ごしていただくための、寄り添いケアを実践します。</p>
           </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="card-icon">🤝</div>
-              <h3>地域とともに</h3>
-              <p>小林市の地域コミュニティと連携し、地域に根ざしたサービスを提供します。</p>
-            </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="card-icon">❤️</div>
+            <h3>家庭的なサービス</h3>
+            <p>地域の中でその人らしく暮らし、心も体も和んでいただけるよう、家庭的なサービスを提供します。</p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 職員の行動指針 -->
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+      <h2 class="section-title">職員の行動指針</h2>
+      <p class="section-subtitle"></p>
+      <ol style="line-height:2.2; padding-left:24px; font-size:15px;">
+        <li>素直な気持ち、感謝の気持ち「ありがとう」と言える自分、言われる自分</li>
+        <li>毎日笑顔！毎日元気に仕事に向かう</li>
+        <li>できない理由を考えない、できる方法を考え、あきらめないでチャレンジする人になる</li>
+        <li>自己中心にならず、仕事に工夫と発想を持ち常に人の喜ぶことを考える</li>
+        <li>「仕方ない、無理、ダメ、時間がない、人手が足りない」を言うだけでは、解決は遠ざかる</li>
+        <li>何のために、誰のために仕事をしているのかを考える</li>
+        <li>「ほうれんそう」職員同士のコミュニケーションで楽しい職場づくりを</li>
+        <li>正直でうそをつかない人になれ</li>
+        <li>人の悪口、ぼやき、愚痴、陰口を言わない人になる</li>
+        <li>自分が言われたくない事、されたくないことは他人にはしてはならない</li>
+      </ol>
+      <div style="background:var(--color-primary-light); border-radius:12px; padding:28px; margin-top:32px; text-align:center; line-height:2.2; color:var(--color-primary); font-size:15px;">
+        「ハイ」という素直な心 ／ 「スミマセン」という反省の心<br/>
+        「オカゲサマ」という謙虚な心 ／ 「サセテクダサイ」という奉仕の心<br/>
+        「アリガトウ」という感謝の心<br/>
+        <strong style="font-size:17px; display:block; margin-top:12px;">「和を以て貴しと為す」</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- 元気村なごみ庵 -->
+  <section class="section section-alt" id="nagomi-an">
+    <div class="container">
+      <h2 class="section-title">元気村なごみ庵</h2>
+      <p class="section-subtitle">地域住民の皆さんの寄り合い所・茶飲ん場として</p>
+      <p style="text-align:center; max-width:680px; margin:0 auto 32px; line-height:2;">
+        なごみ庵では地域住民の皆さんの寄り合い所として、また茶飲ん場として、様々な会議の場としてご活用いただけるようにしています。お気軽にお電話ください。
+      </p>
+      <table class="info-table" style="max-width:680px; margin:0 auto;">
+        <tr><th>施設名称</th><td>元気村「なごみ庵」</td></tr>
+        <tr><th>住所</th><td>小林市南西方6286番地1の2</td></tr>
+        <tr><th>電話</th><td><a href="tel:0984-27-2820">0984-27-2820</a></td></tr>
+        <tr><th>営業時間</th><td>9:00〜22:00</td></tr>
+        <tr><th>営業日</th><td>毎週土日祝祭日を含め利用できます<br/>※12月30日〜1月3日は休館日。諸事情により臨時休館することもあります。</td></tr>
+      </table>
     </div>
   </section>
 

@@ -31,7 +31,9 @@ const pathname = Astro.url.pathname;
       <ul class="nav-list">
         <li><a href="/" class={pathname === '/' ? 'active' : ''}>ホーム</a></li>
         <li><a href="/dayservice" class={pathname.startsWith('/dayservice') ? 'active' : ''}>デイサービス</a></li>
+        <li><a href="/dayservice#minidayservice">ミニデイサービス</a></li>
         <li><a href="/grouphome" class={pathname.startsWith('/grouphome') ? 'active' : ''}>グループホーム</a></li>
+        <li><a href="/company#nagomi-an">元気村なごみ庵</a></li>
         <li><a href="/news" class={pathname.startsWith('/news') ? 'active' : ''}>新着情報</a></li>
         <li><a href="/training" class={pathname.startsWith('/training') ? 'active' : ''}>研修実績</a></li>
         <li class="nav-new"><a href="/jobs" class={pathname.startsWith('/jobs') ? 'active' : ''}>求人票</a></li>
