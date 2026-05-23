@@ -3,15 +3,37 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="ホーム">
 
-  <!-- ヒーロー -->
-  <section class="hero">
-    <div class="container">
-      <h1>専門スタッフで<br/>安心の一日を</h1>
-      <p>家族みたいなふれあいで、安心して生活するための<br/>環境づくりのお手伝いをいたします。</p>
-      <a href="/inquiry" class="btn">お問い合わせ</a>
-      <a href="/dayservice" class="btn btn-outline">サービスを見る</a>
+  <!-- スライダー -->
+  <div class="slider">
+    <div class="slides">
+      <div class="slide">
+        <img src="/images/image2.jpg" alt="宮崎県小林市の自然豊かな風景" />
+      </div>
+      <div class="slide">
+        <img src="/images/image1.jpg" alt="デイサービス 専門スタッフとご利用者様" />
+      </div>
     </div>
-  </section>
+    <div class="slider-overlay">
+      <div class="slider-text">
+        <p class="slider-catch">家族みたいなあったかい生活</p>
+        <h1>株式会社　和福祉サービス</h1>
+        <p class="slider-sub">ご利用者の個性を尊重しながら<br/>安心して生活するための環境づくりのお手伝いをいたします。</p>
+        <div class="slider-btns">
+          <a href="/inquiry" class="btn">お問い合わせ</a>
+          <a href="/dayservice" class="btn btn-outline">サービスを見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- お知らせバー -->
+  <div class="info-bar">
+    <div class="container info-bar-inner">
+      <span class="info-bar-tel">📞 <a href="tel:0984-27-2820">0984-27-2820</a></span>
+      <span class="info-bar-hours">営業時間 9:00〜19:00　FAX: 0984-27-1670（24時間対応）</span>
+      <a href="/inquiry" class="info-bar-link">メールでのお問い合わせ →</a>
+    </div>
+  </div>
 
   <!-- サービス紹介 -->
   <section class="section section-alt">
@@ -23,14 +45,28 @@ import Layout from '../layouts/Layout.astro';
           <div class="card-body">
             <div class="card-icon">🌸</div>
             <h3>デイサービス</h3>
-            <p>専門スタッフによる日帰りサービス。レクリエーションや入浴、食事を通じて充実した一日をお過ごしいただけます。</p>
+            <p>「かゆいところにすぐ手が届く」サービスをモットーに、目配り・気配り・手配り・心配りで対応します。</p>
+          </div>
+        </a>
+        <a href="/dayservice#minidayservice" class="card">
+          <div class="card-body">
+            <div class="card-icon">☕</div>
+            <h3>ミニデイサービス</h3>
+            <p>あったかで、家族みたいなふれあいと笑顔。話に花が咲き、みんなでいっしょに和みましょう。</p>
           </div>
         </a>
         <a href="/grouphome" class="card">
           <div class="card-body">
             <div class="card-icon">🏠</div>
             <h3>グループホーム</h3>
-            <p>認知症の方が共同生活を送る住まい。少人数で家庭的な雰囲気のなか、専門スタッフがサポートします。</p>
+            <p>少人数で家庭的な雰囲気のなか、認知症の方がその人らしく暮らせる環境を提供します。</p>
+          </div>
+        </a>
+        <a href="/company#nagomi-an" class="card">
+          <div class="card-body">
+            <div class="card-icon">🍵</div>
+            <h3>元気村なごみ庵</h3>
+            <p>地域住民の皆さんの寄り合い所・茶飲ん場として、様々な会議の場としてもご活用いただけます。</p>
           </div>
         </a>
       </div>
@@ -44,19 +80,9 @@ import Layout from '../layouts/Layout.astro';
       <p class="section-subtitle">お知らせ・イベント情報をお届けします</p>
       <ul class="news-list">
         <li class="news-item">
-          <span class="news-date">2024.01.15</span>
+          <span class="news-date">2016.02</span>
           <span class="news-tag">お知らせ</span>
-          <a href="/news" class="news-title">年末年始の営業について</a>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2024.01.08</span>
-          <span class="news-tag">イベント</span>
-          <a href="/news" class="news-title">新春レクリエーションを開催しました</a>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2023.12.20</span>
-          <span class="news-tag">お知らせ</span>
-          <a href="/news" class="news-title">クリスマス会を開催しました</a>
+          <span class="news-title">ホームページを公開しました。</span>
         </li>
       </ul>
       <div style="text-align:center; margin-top:32px;">
@@ -78,4 +104,91 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
 .card { display: block; text-decoration: none; color: inherit; }
+
+/* スライダー */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+}
+.slides {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  animation: slide 10s infinite;
+}
+.slide {
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  45%  { transform: translateX(0); }
+  50%  { transform: translateX(-50%); }
+  95%  { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* スライダーのオーバーレイテキスト */
+.slider-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.slider-text { color: white; }
+.slider-catch {
+  font-size: clamp(13px, 2vw, 16px);
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+.slider-text h1 {
+  font-size: clamp(22px, 4vw, 40px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.slider-sub {
+  font-size: clamp(13px, 2vw, 17px);
+  line-height: 1.9;
+  margin-bottom: 28px;
+  opacity: 0.9;
+}
+.slider-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* お知らせバー */
+.info-bar {
+  background: var(--color-primary);
+  color: white;
+  padding: 14px 20px;
+}
+.info-bar-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+.info-bar-tel { font-weight: 700; font-size: 17px; }
+.info-bar-tel a { color: white; }
+.info-bar-hours { opacity: 0.85; }
+.info-bar-link { margin-left: auto; color: white; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.5); }
+
+@media (max-width: 768px) {
+  .slider { height: 320px; }
+  .info-bar-inner { gap: 8px; }
+  .info-bar-link { margin-left: 0; }
+}
 </style>
