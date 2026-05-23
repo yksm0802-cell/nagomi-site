@@ -8,14 +8,26 @@ import Layout from '../layouts/Layout.astro';
     <p>純和風のちっちゃなデイサービス 和（なごみ）</p>
   </div>
 
+  <!-- メイン写真 -->
+  <section class="section section-alt" style="padding:32px 0;">
+    <div class="container">
+      <div class="photo-main">
+        <img src="/images/dayservice_img001.jpg" alt="デイサービスセンター和 外観" class="photo-hero-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- キャッチコピー -->
   <section class="section">
     <div class="container" style="max-width:800px;">
-      <p style="text-align:center; font-size:16px; line-height:2; margin-bottom:48px;">
-        「かゆいところにすぐ手が届く」サービスをモットーに、職員が目配り、気配り、手配り、そして心配りをしながら、ご利用者様のすぐ近くで毎日太陽のような笑顔で対応しています。
+      <p style="text-align:center; font-size:17px; line-height:2.2; margin-bottom:48px; color:var(--color-primary); font-weight:500;">
+        「かゆいところにすぐ手が届く」サービスをモットーに、<br/>
+        職員が目配り、気配り、手配り、そして心配りをしながら、<br/>
+        ご利用者様のすぐ近くで毎日太陽のような笑顔で対応しています。
       </p>
 
       <h2 class="section-title">施設情報</h2>
-      <p class="section-subtitle"></p>
+      <p class="section-subtitle">デイサービスセンター 和（なごみ）</p>
       <table class="info-table" style="margin-bottom:64px;">
         <tr><th>施設名</th><td>デイサービスセンター 和（なごみ）</td></tr>
         <tr><th>住所</th><td>小林市南西方6257番地33</td></tr>
@@ -24,6 +36,7 @@ import Layout from '../layouts/Layout.astro';
         <tr><th>営業日</th><td>月曜日〜土曜日（祝祭日も営業）<br/>※12月30日〜1月3日は休み</td></tr>
         <tr><th>利用定員</th><td>1日最大18名</td></tr>
         <tr><th>事業区分</th><td>地域密着型通所介護、介護予防通所介護</td></tr>
+        <tr><th>事業所番号</th><td>4570500605</td></tr>
       </table>
 
       <h2 class="section-title">スタッフ体制</h2>
@@ -32,12 +45,74 @@ import Layout from '../layouts/Layout.astro';
         <tr><th>生活相談員</th><td>2名（介護福祉士）</td></tr>
         <tr><th>介護職員</th><td>5名（介護福祉士及び初任者研修修了者）</td></tr>
         <tr><th>看護師・機能訓練指導員</th><td>3名</td></tr>
+        <tr><th>栄養士・調理員</th><td>2名（栄養士、調理師）</td></tr>
       </table>
+    </div>
+  </section>
 
+  <!-- フォトギャラリー -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">施設の様子</h2>
+      <p class="section-subtitle">スタッフと利用者様が共に過ごす毎日の風景</p>
+      <div class="photo-grid">
+        <img src="/images/20220208_img001.jpg" alt="デイサービスの様子" />
+        <img src="/images/20220208_img002.jpg" alt="デイサービスの様子" />
+        <img src="/images/20220208_img003.jpg" alt="デイサービスの様子" />
+        <img src="/images/20220208_img004.jpg" alt="デイサービスの様子" />
+        <img src="/images/20220208_img005.jpg" alt="デイサービスの様子" />
+        <img src="/images/20220208_img006.jpg" alt="デイサービスの様子" />
+        <img src="/images/20201106_1.jpg" alt="デイサービスの様子" />
+        <img src="/images/20201106_2.jpg" alt="デイサービスの様子" />
+        <img src="/images/231026_002.jpg" alt="デイサービスの様子" />
+        <img src="/images/dayservice_img007.jpg" alt="デイサービスの様子" />
+        <img src="/images/200420_009.jpg" alt="デイサービスの様子" />
+        <img src="/images/200420_010.jpg" alt="デイサービスの様子" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 機能訓練 -->
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+      <h2 class="section-title">機能訓練・リハビリ</h2>
+      <p class="section-subtitle">指導員と一緒に楽しく取り組みます</p>
+      <div class="photo-grid-3">
+        <img src="/images/20190320_001.jpg" alt="機能訓練の様子" />
+        <img src="/images/20190320_002.jpg" alt="機能訓練の様子" />
+        <img src="/images/0618_1.jpg" alt="機能訓練の様子" />
+      </div>
+      <p style="text-align:center; margin-top:24px; font-size:15px; line-height:2;">
+        要介護1から5までの方が利用可能です。<br/>
+        また小林市総合事業により、要支援1及び2の方もご利用できます。
+      </p>
+    </div>
+  </section>
+
+  <!-- 入浴用リフト -->
+  <section class="section section-alt">
+    <div class="container" style="max-width:800px;">
+      <h2 class="section-title">入浴用介護機器（リフト浴）</h2>
+      <p class="section-subtitle">安心・安楽な入浴のために</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:32px;">
+        <img src="/images/0618_2.jpg" alt="入浴用リフトの様子" style="border-radius:8px; object-fit:cover; width:100%; height:240px;" />
+        <div style="display:flex; align-items:center;">
+          <div style="background:var(--color-primary-light); border-radius:12px; padding:24px; line-height:2; font-size:15px;">
+            <p>デイサービスセンターの入浴では、介助する職員の<strong>腰痛予防対策</strong>と<strong>介護負担の軽減</strong>を目的に、入浴用リフトを導入しました。</p>
+            <p style="margin-top:12px;">リフト浴ではご利用者様もゆっくり湯船に入ることができており、職員も安心安楽に介助でき、要介護状態の高いご利用者様も<strong>安心して入浴</strong>できます。ぜひご利用ください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金について -->
+  <section class="section">
+    <div class="container" style="max-width:800px;">
       <h2 class="section-title">料金について</h2>
       <p class="section-subtitle">利用時間帯に伴う利用料金は、介護報酬の告示上の額で1割〜3割の負担となります</p>
 
-      <table class="info-table" style="margin-bottom:32px;">
+      <table class="info-table fee-table" style="margin-bottom:32px;">
         <thead>
           <tr>
             <th>加算名称</th>
@@ -75,13 +150,13 @@ import Layout from '../layouts/Layout.astro';
           </tr>
           <tr>
             <td>介護職員処遇改善加算Ⅱ</td>
-            <td colspan="4">所定単位の9.0%を算定</td>
+            <td colspan="4" style="text-align:center;">所定単位の9.0%を算定</td>
             <td>1月につき</td>
           </tr>
         </tbody>
       </table>
 
-      <div style="background:var(--color-primary-light); border-radius:12px; padding:24px; margin-bottom:48px; font-size:14px; line-height:2;">
+      <div style="background:var(--color-primary-light); border-radius:12px; padding:24px; margin-bottom:48px; font-size:14px; line-height:2.2;">
         <strong>その他の費用について</strong>
         <ul style="padding-left:20px; margin-top:8px;">
           <li>① 送迎費：徴収いたしません（ご家族送迎の場合は介護報酬の額より減算されます）</li>
@@ -97,18 +172,71 @@ import Layout from '../layouts/Layout.astro';
   <!-- ミニデイサービス -->
   <section class="section section-alt" id="minidayservice">
     <div class="container" style="max-width:800px;">
-      <h2 class="section-title">ミニデイサービス</h2>
+      <h2 class="section-title">ミニデイサービス・介護予防体操教室</h2>
       <p class="section-subtitle">あったかで、家族みたいなふれあいと笑顔を</p>
-      <p style="text-align:center; line-height:2; margin-bottom:32px;">
-        笑顔と話に花が咲き、みんなでいっしょに和みましょう。小規模だからこそできる、きめ細やかなサービスを提供しています。
+      <p style="text-align:center; line-height:2.2; margin-bottom:32px; font-size:15px;">
+        笑顔と話に花が咲き、みんなでいっしょに和みましょう。<br/>
+        和福祉サービスでは、要介護状態にならないための「転倒予防体操」や「貯筋体操」、<br/>
+        そして「ロコモ体操」などを実施します。なごみ庵で体操して、みんな元気な生活を送りましょう！
       </p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-bottom:40px;">
+        <div style="background:white; border-radius:12px; box-shadow:var(--shadow); padding:28px; border-top:4px solid var(--color-primary);">
+          <h3 style="color:var(--color-primary); font-size:16px; margin-bottom:16px;">📋 利用対象者</h3>
+          <ol style="padding-left:20px; line-height:2.2; font-size:14px;">
+            <li>介護保険の要介護認定で「要支援１」または「要支援２」に認定された方</li>
+            <li>小林市が実施する基本チェックリストにより「サービス事業対象者」と認定された方</li>
+            <li>要介護認定で「非該当」と判断された方、または教室に参加してみたい方</li>
+          </ol>
+        </div>
+        <div style="background:white; border-radius:12px; box-shadow:var(--shadow); padding:28px; border-top:4px solid var(--color-accent);">
+          <h3 style="color:var(--color-primary); font-size:16px; margin-bottom:16px;">🕙 元気わくわく体操教室</h3>
+          <table style="width:100%; font-size:14px; line-height:2;">
+            <tr><td style="font-weight:700; color:var(--color-primary); padding-right:12px;">開催日</td><td>火・水・金（週1回）</td></tr>
+            <tr><td style="font-weight:700; color:var(--color-primary); padding-right:12px;">時間</td><td>10:00〜11:30</td></tr>
+            <tr><td style="font-weight:700; color:var(--color-primary); padding-right:12px;">送迎</td><td>あり</td></tr>
+            <tr><td style="font-weight:700; color:var(--color-primary); padding-right:12px;">内容</td><td>軽体操・ゲーム・創作活動など</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div style="background:var(--color-primary-light); border-radius:12px; padding:24px; margin-bottom:32px; font-size:14px; line-height:2.2;">
+        <strong>サービスの種類</strong>
+        <ul style="padding-left:20px; margin-top:8px;">
+          <li><strong>なごみ庵ミニデイサービス</strong>（通所サービスA及び通所サービスC）：①または②の方が対象。地域包括支援センターが作成する介護予防計画に基づいて利用できます。</li>
+          <li><strong>元気わくわく体操教室</strong>（小林市受託事業）：③の方が対象。なごみ庵に直接申し込みで利用可能。</li>
+        </ul>
+        <p style="margin-top:12px;">★基本チェックリストとは、25項目の日常生活上のことについてお尋ねするものです。詳しくは小林市地域包括支援センターにお問い合わせください。</p>
+      </div>
+
       <div style="text-align:center;">
-        <a href="/inquiry" class="btn">詳細はお問い合わせください</a>
+        <p style="font-size:15px; margin-bottom:8px;"><strong>連絡先：</strong>和福祉サービス　なごみ庵（グループホームひなた隣り）</p>
+        <p style="font-size:14px; color:var(--color-text-light);">小林市南西方6286番地1-2　TEL: <a href="tel:0984-27-2820">0984-27-2820</a>　FAX: 0984-27-1670</p>
       </div>
     </div>
   </section>
 
+  <!-- 西小林ケアプランセンター -->
   <section class="section">
+    <div class="container" style="max-width:800px;">
+      <h2 class="section-title">西小林ケアプランセンター 和（なごみ）</h2>
+      <p class="section-subtitle">ケアプラン作成・在宅介護のご相談はお気軽に</p>
+      <table class="info-table" style="margin-bottom:32px;">
+        <tr><th>施設名</th><td>西小林ケアプランセンター 和（なごみ）</td></tr>
+        <tr><th>住所</th><td>小林市南西方6286-1-2</td></tr>
+        <tr><th>電話</th><td><a href="tel:0984-27-2820">0984-27-2820</a></td></tr>
+        <tr><th>営業時間</th><td>月〜金（8:30〜17:30）、土（8:30〜12:30）</td></tr>
+        <tr><th>営業日</th><td>月曜日〜土曜日<br/>※お盆（8/13〜8/15）と年末年始（12/29〜1/3）を除く</td></tr>
+        <tr><th>24時間対応</th><td>電話等により24時間常時受付等が可能な状態とします</td></tr>
+      </table>
+      <p style="text-align:center; font-size:14px; color:var(--color-text-light);">
+        ケアプラン作成や在宅介護のお手伝いをいたします。お気軽にご相談ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- 見学・お問い合わせ -->
+  <section class="section section-alt">
     <div class="container" style="text-align:center;">
       <h2 class="section-title">見学・お問い合わせ</h2>
       <p style="margin-bottom:24px; color:var(--color-text-light);">サービスについてのご質問・見学のご希望はお気軽にどうぞ</p>
@@ -121,5 +249,46 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-.info-table thead th { background: var(--color-primary); color: white; }
+.fee-table thead th { background: var(--color-primary); color: white; }
+
+.photo-hero-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.photo-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+.photo-grid img:hover { transform: scale(1.03); }
+
+.photo-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+.photo-grid-3 img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .photo-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
 </style>

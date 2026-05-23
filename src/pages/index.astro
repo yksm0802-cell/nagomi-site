@@ -5,12 +5,15 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- スライダー -->
   <div class="slider">
-    <div class="slides">
+    <div class="slides slides-3">
       <div class="slide">
         <img src="/images/image2.jpg" alt="宮崎県小林市の自然豊かな風景" />
       </div>
       <div class="slide">
         <img src="/images/image1.jpg" alt="デイサービス 専門スタッフとご利用者様" />
+      </div>
+      <div class="slide">
+        <img src="/images/image3.jpg" alt="和福祉サービスの施設" />
       </div>
     </div>
     <div class="slider-overlay">
@@ -91,6 +94,26 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- フォトバナー -->
+  <section class="section section-alt" style="padding:40px 0;">
+    <div class="container">
+      <div class="bnr-grid">
+        <a href="/dayservice" class="bnr-item">
+          <img src="/images/bnr_img001.jpg" alt="デイサービス" />
+          <span>デイサービス</span>
+        </a>
+        <a href="/grouphome" class="bnr-item">
+          <img src="/images/bnr_img002.jpg" alt="グループホーム" />
+          <span>グループホーム</span>
+        </a>
+        <a href="/company#nagomi-an" class="bnr-item">
+          <img src="/images/bnr_img003.jpg" alt="元気村なごみ庵" />
+          <span>元気村なごみ庵</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- 採用情報バナー -->
   <section class="section section-alt">
     <div class="container" style="text-align:center;">
@@ -114,12 +137,18 @@ import Layout from '../layouts/Layout.astro';
 }
 .slides {
   display: flex;
-  width: 200%;
   height: 100%;
-  animation: slide 10s infinite;
+}
+.slides-3 {
+  width: 300%;
+  animation: slide3 15s infinite;
+}
+.slides-3 .slide {
+  width: 33.333%;
+  height: 100%;
+  flex-shrink: 0;
 }
 .slide {
-  width: 50%;
   height: 100%;
   flex-shrink: 0;
 }
@@ -128,12 +157,14 @@ import Layout from '../layouts/Layout.astro';
   height: 100%;
   object-fit: cover;
 }
-@keyframes slide {
-  0%   { transform: translateX(0); }
-  45%  { transform: translateX(0); }
-  50%  { transform: translateX(-50%); }
-  95%  { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+@keyframes slide3 {
+  0%    { transform: translateX(0); }
+  28%   { transform: translateX(0); }
+  33%   { transform: translateX(-33.333%); }
+  61%   { transform: translateX(-33.333%); }
+  66%   { transform: translateX(-66.666%); }
+  94%   { transform: translateX(-66.666%); }
+  100%  { transform: translateX(0); }
 }
 
 /* スライダーのオーバーレイテキスト */
@@ -186,9 +217,44 @@ import Layout from '../layouts/Layout.astro';
 .info-bar-hours { opacity: 0.85; }
 .info-bar-link { margin-left: auto; color: white; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.5); }
 
+/* フォトバナー */
+.bnr-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.bnr-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: block;
+}
+.bnr-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.bnr-item:hover img { transform: scale(1.05); }
+.bnr-item span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(61, 122, 95, 0.85);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
 @media (max-width: 768px) {
   .slider { height: 320px; }
   .info-bar-inner { gap: 8px; }
   .info-bar-link { margin-left: 0; }
+  .bnr-grid { grid-template-columns: 1fr; }
+  .bnr-item img { height: 160px; }
 }
 </style>
