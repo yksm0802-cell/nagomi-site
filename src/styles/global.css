@@ -279,13 +279,30 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* レスポンシブ */
 @media (max-width: 768px) {
+  /* ヘッダー上段：スマホでは電話番号のみ表示 */
+  .header-topbar-inner { justify-content: center; gap: 6px; }
+  .topbar-fax { display: none; }
+  .topbar-hours { display: none; }
+
+  /* ヘッダー下段 */
+  .header-inner { flex-wrap: wrap; padding: 10px 16px; gap: 0; }
+  .site-title-text small { display: none; }
+
+  /* ハンバーガーメニュー */
   .nav-toggle { display: block; }
-  .site-nav { display: none; width: 100%; }
+  .site-nav { display: none; width: 100%; border-top: 1px solid var(--color-border); margin-top: 8px; }
   .site-nav.open { display: block; }
-  .nav-list { flex-direction: column; padding: 12px 0; gap: 4px; }
-  .nav-list a { padding: 10px 16px; border-radius: var(--radius); }
-  .header-inner { flex-wrap: wrap; padding: 10px 16px; }
-  .header-topbar-inner { gap: 8px; flex-wrap: wrap; justify-content: flex-start; }
+  .nav-list { flex-direction: column; padding: 8px 0; gap: 2px; }
+  .nav-list a {
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    border: none;
+    background: transparent;
+    font-size: 14px;
+  }
+  .nav-list a:hover, .nav-list a.active { background: var(--color-primary-light); }
+  .nav-list .nav-new a { background: var(--color-accent); color: white; border-radius: var(--radius); }
+
   .btn-outline { margin-left: 0; margin-top: 12px; }
   .info-table th { width: 35%; }
 }
