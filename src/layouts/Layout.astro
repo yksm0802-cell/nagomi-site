@@ -19,10 +19,21 @@ const pathname = Astro.url.pathname;
 <body>
 
 <header class="site-header">
+  <!-- 上段：電話・FAX -->
+  <div class="header-topbar">
+    <div class="header-topbar-inner">
+      <span class="topbar-tel">📞 <a href="tel:0984-27-2820">0984-27-2820</a>　<span class="topbar-hours">営業時間 9:00〜19:00</span></span>
+      <span class="topbar-fax">FAX: 0984-27-1670（24時間対応）</span>
+    </div>
+  </div>
+  <!-- 下段：ロゴ＋ナビ -->
   <div class="header-inner">
     <a href="/" class="site-title">
-      株式会社和福祉サービス
-      <small>宮崎県小林市のデイサービス・グループホーム</small>
+      <span class="site-title-logo">和</span>
+      <span class="site-title-text">
+        株式会社和福祉サービス
+        <small>宮崎県小林市のデイサービス・グループホーム</small>
+      </span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
       <span></span><span></span><span></span>
@@ -31,17 +42,16 @@ const pathname = Astro.url.pathname;
       <ul class="nav-list">
         <li><a href="/" class={pathname === '/' ? 'active' : ''}>ホーム</a></li>
         <li><a href="/dayservice" class={pathname.startsWith('/dayservice') ? 'active' : ''}>デイサービス</a></li>
-        <li><a href="/dayservice#minidayservice">ミニデイサービス</a></li>
         <li><a href="/grouphome" class={pathname.startsWith('/grouphome') ? 'active' : ''}>グループホーム</a></li>
         <li><a href="/company#nagomi-an">元気村なごみ庵</a></li>
         <li><a href="/news" class={pathname.startsWith('/news') ? 'active' : ''}>新着情報</a></li>
         <li><a href="/training" class={pathname.startsWith('/training') ? 'active' : ''}>研修実績</a></li>
-        <li class="nav-new"><a href="/jobs" class={pathname.startsWith('/jobs') ? 'active' : ''}>求人票</a></li>
         <li><a href="/company" class={pathname.startsWith('/company') ? 'active' : ''}>会社概要</a></li>
-        <li><a href="/inquiry" class={pathname.startsWith('/inquiry') ? 'active' : ''}>お問い合わせ</a></li>
+        <li class="nav-new"><a href="/jobs" class={pathname.startsWith('/jobs') ? 'active' : ''}>求人票</a></li>
       </ul>
     </nav>
   </div>
+  <div class="header-accent-line"></div>
 </header>
 
 <main>
@@ -54,12 +64,14 @@ const pathname = Astro.url.pathname;
       <div class="footer-brand">
         <h2>株式会社和福祉サービス</h2>
         <p>宮崎県小林市にて、デイサービス・グループホームを運営しております。家族みたいなふれあいで、安心して生活するための環境づくりのお手伝いをいたします。</p>
+        <p class="footer-tel">📞 <a href="tel:0984-27-2820">0984-27-2820</a><span>（9:00〜19:00）</span></p>
       </div>
       <div class="footer-nav">
         <h3>サービス</h3>
         <ul>
           <li><a href="/dayservice">デイサービス</a></li>
           <li><a href="/grouphome">グループホーム</a></li>
+          <li><a href="/company#nagomi-an">元気村なごみ庵</a></li>
         </ul>
       </div>
       <div class="footer-nav">
@@ -69,7 +81,6 @@ const pathname = Astro.url.pathname;
           <li><a href="/training">研修実績</a></li>
           <li><a href="/jobs">求人票</a></li>
           <li><a href="/company">会社概要</a></li>
-          <li><a href="/inquiry">お問い合わせ</a></li>
         </ul>
       </div>
     </div>

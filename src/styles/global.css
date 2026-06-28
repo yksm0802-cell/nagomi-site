@@ -33,36 +33,102 @@ img { max-width: 100%; height: auto; display: block; }
 /* ヘッダー */
 .site-header {
   background: var(--color-white);
-  border-bottom: 3px solid var(--color-primary);
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: var(--shadow);
 }
+
+/* 上段：電話・FAX帯 */
+.header-topbar {
+  background: #F5F5F5;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 12px;
+  color: var(--color-text-light);
+}
+.header-topbar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.topbar-tel { font-weight: 700; color: var(--color-text); }
+.topbar-tel a { color: var(--color-primary); font-size: 14px; }
+.topbar-hours { font-weight: 400; font-size: 11px; color: var(--color-text-light); }
+.topbar-fax { font-size: 11px; }
+
+/* 下段：ロゴ＋ナビ */
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
+  padding: 10px 20px;
   max-width: var(--max-width);
   margin: 0 auto;
 }
-.site-title { font-size: 18px; font-weight: 700; color: var(--color-primary); line-height: 1.3; }
-.site-title small { font-size: 12px; font-weight: 400; color: var(--color-text-light); display: block; }
 
-.nav-list { list-style: none; display: flex; gap: 4px; flex-wrap: wrap; }
+/* アクセントライン（グラデーション） */
+.header-accent-line {
+  height: 3px;
+  background: linear-gradient(to right, #1A3A2A, var(--color-primary), var(--color-accent));
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  line-height: 1.3;
+}
+.site-title-logo {
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.site-title-text { font-size: 15px; font-weight: 700; color: var(--color-text); }
+.site-title-text small { font-size: 11px; font-weight: 400; color: var(--color-text-light); display: block; }
+
+.nav-list { list-style: none; display: flex; gap: 2px; flex-wrap: wrap; }
 .nav-list a {
   display: block;
-  padding: 6px 12px;
-  font-size: 14px;
+  padding: 6px 10px;
+  font-size: 13px;
   font-weight: 500;
-  border-radius: var(--radius);
+  border-radius: 3px;
+  border: 1px solid var(--color-border);
   color: var(--color-text);
-  transition: background 0.2s;
+  background: #FAFAFA;
+  transition: background 0.15s, color 0.15s;
 }
-.nav-list a:hover, .nav-list a.active { background: var(--color-primary-light); color: var(--color-primary); }
-.nav-list .nav-new a { background: var(--color-primary); color: white; }
+.nav-list a:hover, .nav-list a.active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-color: var(--color-primary-light);
+}
+.nav-list .nav-new a {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+  font-weight: 700;
+}
 .nav-list .nav-new a:hover { opacity: 0.85; }
+
+/* フッター電話 */
+.footer-tel { margin-top: 12px; font-size: 14px; font-weight: 700; color: white; }
+.footer-tel a { color: white; }
+.footer-tel span { font-size: 12px; font-weight: 400; opacity: 0.7; margin-left: 6px; }
 
 /* ハンバーガー */
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
@@ -216,9 +282,10 @@ img { max-width: 100%; height: auto; display: block; }
   .nav-toggle { display: block; }
   .site-nav { display: none; width: 100%; }
   .site-nav.open { display: block; }
-  .nav-list { flex-direction: column; padding: 12px 0; }
-  .nav-list a { padding: 10px 16px; }
-  .header-inner { flex-wrap: wrap; }
+  .nav-list { flex-direction: column; padding: 12px 0; gap: 4px; }
+  .nav-list a { padding: 10px 16px; border-radius: var(--radius); }
+  .header-inner { flex-wrap: wrap; padding: 10px 16px; }
+  .header-topbar-inner { gap: 8px; flex-wrap: wrap; justify-content: flex-start; }
   .btn-outline { margin-left: 0; margin-top: 12px; }
   .info-table th { width: 35%; }
 }

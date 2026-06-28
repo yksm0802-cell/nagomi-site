@@ -1,260 +1,416 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+const allNews = await getCollection('news');
+const recentNews = allNews
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 5);
 ---
 <Layout title="ホーム">
 
-  <!-- スライダー -->
-  <div class="slider">
-    <div class="slides slides-3">
-      <div class="slide">
-        <img src="/images/image2.jpg" alt="宮崎県小林市の自然豊かな風景" />
-      </div>
-      <div class="slide">
-        <img src="/images/image1.jpg" alt="デイサービス 専門スタッフとご利用者様" />
-      </div>
-      <div class="slide">
-        <img src="/images/image3.jpg" alt="和福祉サービスの施設" />
+  <!-- ヒーロー：左テキスト＋右スライド写真 -->
+  <div class="hero-split">
+    <div class="hero-text">
+      <p class="hero-label">NAGOMI WELFARE SERVICE</p>
+      <h1>ご利用者様に寄り添う<br/>地域密着型の介護を</h1>
+      <p class="hero-body">デイサービス・グループホーム・介護予防体操教室など、<br/>宮崎県小林市で複数のサービスを展開しています。</p>
+      <div class="hero-actions">
+        <a href="/dayservice" class="btn-primary">サービスを見る</a>
+        <a href="/company" class="btn-secondary">施設の様子</a>
+        <span class="hero-tel">📞 <a href="tel:0984-27-2820">0984-27-2820</a></span>
       </div>
     </div>
-    <div class="slider-overlay">
-      <div class="slider-text">
-        <p class="slider-catch">家族みたいなあったかい生活</p>
-        <h1>株式会社　和福祉サービス</h1>
-        <p class="slider-sub">ご利用者の個性を尊重しながら<br/>安心して生活するための環境づくりのお手伝いをいたします。</p>
-        <div class="slider-btns">
-          <a href="/inquiry" class="btn">お問い合わせ</a>
-          <a href="/dayservice" class="btn btn-outline">サービスを見る</a>
-        </div>
+    <div class="hero-slider">
+      <div class="hero-slides">
+        <div class="hero-slide"><img src="/images/image2.jpg" alt="宮崎県小林市の自然豊かな風景" /></div>
+        <div class="hero-slide"><img src="/images/image1.jpg" alt="デイサービス 専門スタッフとご利用者様" /></div>
+        <div class="hero-slide"><img src="/images/image3.jpg" alt="和福祉サービスの施設" /></div>
+      </div>
+      <div class="hero-dots">
+        <span class="on"></span><span></span><span></span>
       </div>
     </div>
   </div>
 
-  <!-- お知らせバー -->
-  <div class="info-bar">
-    <div class="container info-bar-inner">
-      <span class="info-bar-tel">📞 <a href="tel:0984-27-2820">0984-27-2820</a></span>
-      <span class="info-bar-hours">営業時間 9:00〜19:00　FAX: 0984-27-1670（24時間対応）</span>
-      <a href="/inquiry" class="info-bar-link">メールでのお問い合わせ →</a>
-    </div>
-  </div>
-
-  <!-- サービス紹介 -->
-  <section class="section section-alt">
+  <!-- サービス案内：3枚カード -->
+  <section class="section section-gray">
     <div class="container">
-      <h2 class="section-title">サービス案内</h2>
+      <h2 class="section-title">提供サービス一覧</h2>
       <p class="section-subtitle">地域の皆さまに寄り添った介護サービスを提供しています</p>
-      <div class="card-grid">
-        <a href="/dayservice" class="card">
-          <div class="card-body">
-            <div class="card-icon">🌸</div>
+      <div class="service-grid">
+
+        <a href="/dayservice" class="service-card">
+          <div class="service-card-bar" style="background:var(--color-primary);"></div>
+          <div class="service-card-body">
+            <div class="service-icon">🌸</div>
             <h3>デイサービス</h3>
-            <p>「かゆいところにすぐ手が届く」サービスをモットーに、目配り・気配り・手配り・心配りで対応します。</p>
+            <p>自宅から通って、食事・入浴・機能訓練を受けられる日帰りの通所介護。月〜土・祝日も営業。定員18名。</p>
+            <div class="service-note">ミニデイサービス・体操教室もあります</div>
+            <span class="service-link">詳しく見る →</span>
           </div>
         </a>
-        <a href="/dayservice#minidayservice" class="card">
-          <div class="card-body">
-            <div class="card-icon">☕</div>
-            <h3>ミニデイサービス</h3>
-            <p>あったかで、家族みたいなふれあいと笑顔。話に花が咲き、みんなでいっしょに和みましょう。</p>
-          </div>
-        </a>
-        <a href="/grouphome" class="card">
-          <div class="card-body">
-            <div class="card-icon">🏠</div>
+
+        <a href="/grouphome" class="service-card">
+          <div class="service-card-bar" style="background:var(--color-primary);"></div>
+          <div class="service-card-body">
+            <div class="service-icon">🏠</div>
             <h3>グループホーム</h3>
-            <p>少人数で家庭的な雰囲気のなか、認知症の方がその人らしく暮らせる環境を提供します。</p>
+            <p>認知症の方が少人数で専門スタッフと共に家庭的な雰囲気の中で暮らせる共同生活介護。なごみ・ひなたの2施設。24時間・年中無休。</p>
+            <span class="service-link">詳しく見る →</span>
           </div>
         </a>
-        <a href="/company#nagomi-an" class="card">
-          <div class="card-body">
-            <div class="card-icon">🍵</div>
+
+        <a href="/company#nagomi-an" class="service-card">
+          <div class="service-card-bar" style="background:var(--color-accent);"></div>
+          <div class="service-card-body">
+            <div class="service-icon">🍵</div>
             <h3>元気村なごみ庵</h3>
-            <p>地域住民の皆さんの寄り合い所・茶飲ん場として、様々な会議の場としてもご活用いただけます。</p>
+            <p>地域住民の皆さんの寄り合い所・茶飲ん場として開放。様々な会議の場としてもご利用可能。9:00〜22:00。</p>
+            <div class="service-note">ミニデイサービス・元気わくわく体操教室も実施</div>
+            <span class="service-link">詳しく見る →</span>
           </div>
         </a>
+
       </div>
     </div>
   </section>
 
-  <!-- 新着情報 -->
-  <section class="section">
+  <!-- 新着情報 ＋ 研修・スタッフ体制 -->
+  <section class="section section-white">
     <div class="container">
-      <h2 class="section-title">新着情報</h2>
-      <p class="section-subtitle">お知らせ・イベント情報をお届けします</p>
-      <ul class="news-list">
-        <li class="news-item">
-          <span class="news-date">2016.02</span>
-          <span class="news-tag">お知らせ</span>
-          <span class="news-title">ホームページを公開しました。</span>
-        </li>
-      </ul>
-      <div style="text-align:center; margin-top:32px;">
-        <a href="/news" class="btn">新着情報をもっと見る</a>
+      <div class="info-columns">
+
+        <!-- 新着情報 -->
+        <div class="info-col-main">
+          <h2 class="col-title">新着情報</h2>
+          <ul class="news-list">
+            {recentNews.length > 0 ? recentNews.map(post => (
+              <li class="news-item">
+                <span class="news-date">{post.data.date.slice(0,7).replace('-','.')}</span>
+                <span class="news-tag">{post.data.category}</span>
+                <a href={`/news/${post.id}`} class="news-title">{post.data.title}</a>
+              </li>
+            )) : (
+              <li class="news-item">
+                <span class="news-date">2016.02</span>
+                <span class="news-tag">お知らせ</span>
+                <span class="news-title">ホームページを公開しました。</span>
+              </li>
+            )}
+          </ul>
+          <div style="text-align:right; margin-top:16px;">
+            <a href="/news" class="text-link">新着情報一覧を見る →</a>
+          </div>
+        </div>
+
+        <!-- 研修・スタッフ体制 -->
+        <div class="info-col-sub">
+          <h2 class="col-title">研修・スタッフ体制</h2>
+          <div class="staff-card">
+            <div class="staff-card-title">介護福祉士　複数名在籍</div>
+            <p class="staff-card-body">生活相談員・介護職員・看護師・機能訓練指導員・栄養士が連携して対応します</p>
+          </div>
+          <div class="staff-card">
+            <div class="staff-card-title">定期研修を実施</div>
+            <p class="staff-card-body">感染症・虐待防止・BCP・災害対策など、定期的な研修でサービス品質を維持しています</p>
+          </div>
+          <div style="text-align:right; margin-top:12px;">
+            <a href="/training" class="text-link">研修実績を見る →</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- フォトバナー -->
-  <section class="section section-alt" style="padding:40px 0;">
+  <!-- 施設の様子：フォトグリッド -->
+  <section class="section section-gray">
     <div class="container">
-      <div class="bnr-grid">
-        <a href="/dayservice" class="bnr-item">
-          <img src="/images/bnr_img001.jpg" alt="デイサービス" />
-          <span>デイサービス</span>
-        </a>
-        <a href="/grouphome" class="bnr-item">
-          <img src="/images/bnr_img002.jpg" alt="グループホーム" />
-          <span>グループホーム</span>
-        </a>
-        <a href="/company#nagomi-an" class="bnr-item">
-          <img src="/images/bnr_img003.jpg" alt="元気村なごみ庵" />
-          <span>元気村なごみ庵</span>
-        </a>
+      <div class="photos-head">
+        <div>
+          <h2 class="section-title" style="text-align:left; margin-bottom:4px;">毎日の活動・イベント</h2>
+          <p style="font-size:13px; color:var(--color-text-light);">定期的に更新しています</p>
+        </div>
+        <a href="/news" class="text-link">新着情報をもっと見る →</a>
+      </div>
+      <div class="photo-gallery">
+        <img src="/images/20250114_001.jpg" alt="施設の様子" />
+        <img src="/images/20250114_002.jpg" alt="施設の様子" />
+        <img src="/images/20250114_003.jpg" alt="施設の様子" />
+        <img src="/images/20250114_004.jpg" alt="施設の様子" />
+        <img src="/images/210430_002.jpg" alt="施設の様子" />
+        <img src="/images/210430_003.jpg" alt="施設の様子" />
+        <img src="/images/20220208_img001.jpg" alt="施設の様子" />
+        <img src="/images/20220208_img002.jpg" alt="施設の様子" />
+        <img src="/images/200420_001.jpg" alt="施設の様子" />
+        <img src="/images/200420_002.jpg" alt="施設の様子" />
       </div>
     </div>
   </section>
 
-  <!-- 採用情報バナー -->
-  <section class="section section-alt">
-    <div class="container" style="text-align:center;">
-      <h2 class="section-title">一緒に働きませんか？</h2>
-      <p class="section-subtitle">スタッフを随時募集しています</p>
-      <a href="/jobs" class="btn">求人票を見る</a>
+  <!-- お問い合わせCTA -->
+  <section class="section-cta">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <h2 class="cta-title">見学・お問い合わせはお気軽にどうぞ</h2>
+          <p class="cta-sub">電話またはご来所にてお受けします</p>
+        </div>
+        <a href="tel:0984-27-2820" class="cta-btn">📞 0984-27-2820</a>
+      </div>
     </div>
   </section>
 
 </Layout>
 
 <style>
-.card { display: block; text-decoration: none; color: inherit; }
+/* ヒーロー分割 */
+.hero-split {
+  display: flex;
+  min-height: 400px;
+}
+.hero-text {
+  flex: 1;
+  background: #fff;
+  padding: 52px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-label {
+  font-size: 11px;
+  color: var(--color-primary);
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero-text h1 {
+  font-size: clamp(20px, 2.8vw, 30px);
+  font-weight: 700;
+  color: #1A1A1A;
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+.hero-body {
+  font-size: 14px;
+  color: var(--color-text-light);
+  line-height: 2;
+  margin-bottom: 28px;
+}
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  background: #1A3A2A;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 3px;
+  transition: opacity 0.2s;
+}
+.btn-primary:hover { opacity: 0.85; color: #fff; }
+.btn-secondary {
+  border: 1.5px solid #1A3A2A;
+  color: #1A3A2A;
+  font-size: 13px;
+  padding: 9px 20px;
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+.btn-secondary:hover { background: var(--color-primary-light); }
+.hero-tel {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-left: 8px;
+}
+.hero-tel a { color: var(--color-primary); }
 
-/* スライダー */
-.slider {
+.hero-slider {
+  width: 420px;
+  flex-shrink: 0;
   position: relative;
-  width: 100%;
-  height: 520px;
   overflow: hidden;
 }
-.slides {
+.hero-slides {
   display: flex;
-  height: 100%;
-}
-.slides-3 {
   width: 300%;
-  animation: slide3 15s infinite;
+  height: 100%;
+  animation: heroSlide 15s infinite;
 }
-.slides-3 .slide {
+.hero-slide {
   width: 33.333%;
   height: 100%;
   flex-shrink: 0;
 }
-.slide {
-  height: 100%;
-  flex-shrink: 0;
-}
-.slide img {
+.hero-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-@keyframes slide3 {
-  0%    { transform: translateX(0); }
-  28%   { transform: translateX(0); }
-  33%   { transform: translateX(-33.333%); }
-  61%   { transform: translateX(-33.333%); }
-  66%   { transform: translateX(-66.666%); }
-  94%   { transform: translateX(-66.666%); }
-  100%  { transform: translateX(0); }
+@keyframes heroSlide {
+  0%   { transform: translateX(0); }
+  28%  { transform: translateX(0); }
+  33%  { transform: translateX(-33.333%); }
+  61%  { transform: translateX(-33.333%); }
+  66%  { transform: translateX(-66.666%); }
+  94%  { transform: translateX(-66.666%); }
+  100% { transform: translateX(0); }
 }
-
-/* スライダーのオーバーレイテキスト */
-.slider-overlay {
+.hero-dots {
   position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.38);
+  bottom: 12px;
+  right: 14px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+  gap: 5px;
 }
-.slider-text { color: white; }
-.slider-catch {
-  font-size: clamp(13px, 2vw, 16px);
-  letter-spacing: 0.15em;
-  margin-bottom: 10px;
-  opacity: 0.9;
+.hero-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  display: inline-block;
 }
-.slider-text h1 {
-  font-size: clamp(22px, 4vw, 40px);
-  font-weight: 700;
-  margin-bottom: 16px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-}
-.slider-sub {
-  font-size: clamp(13px, 2vw, 17px);
-  line-height: 1.9;
-  margin-bottom: 28px;
-  opacity: 0.9;
-}
-.slider-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.hero-dots span.on { background: #fff; }
 
-/* お知らせバー */
-.info-bar {
-  background: var(--color-primary);
-  color: white;
-  padding: 14px 20px;
-}
-.info-bar-inner {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  font-size: 14px;
-}
-.info-bar-tel { font-weight: 700; font-size: 17px; }
-.info-bar-tel a { color: white; }
-.info-bar-hours { opacity: 0.85; }
-.info-bar-link { margin-left: auto; color: white; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.5); }
+/* セクション背景 */
+.section-gray { padding: 56px 0; background: #F8F8F8; }
+.section-white { padding: 56px 0; background: #fff; }
 
-/* フォトバナー */
-.bnr-grid {
+/* サービスカード */
+.service-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 20px;
 }
-.bnr-item {
-  position: relative;
-  border-radius: 12px;
+.service-card {
+  background: #fff;
+  border-radius: 6px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
   display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.bnr-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.3s;
+.service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.service-card-bar { height: 5px; }
+.service-card-body { padding: 20px 18px; }
+.service-icon { font-size: 32px; margin-bottom: 10px; }
+.service-card h3 { font-size: 17px; font-weight: 700; color: #1A1A1A; margin-bottom: 10px; }
+.service-card p { font-size: 13px; color: var(--color-text-light); line-height: 1.8; margin-bottom: 10px; }
+.service-note {
+  font-size: 12px;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  display: inline-block;
 }
-.bnr-item:hover img { transform: scale(1.05); }
-.bnr-item span {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(61, 122, 95, 0.85);
-  color: white;
-  text-align: center;
-  padding: 10px;
+.service-link { font-size: 13px; font-weight: 700; color: var(--color-primary); }
+
+/* 新着情報＋研修 横並び */
+.info-columns {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+}
+.col-title {
+  font-size: 17px;
   font-weight: 700;
-  font-size: 15px;
+  color: #1A1A1A;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+.news-list { list-style: none; }
+.news-item {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px dotted var(--color-border);
+}
+.news-item:last-child { border-bottom: none; }
+.news-date { font-size: 12px; color: var(--color-text-light); white-space: nowrap; }
+.news-tag {
+  font-size: 11px;
+  padding: 1px 7px;
+  border-radius: 3px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+.news-title { font-size: 14px; color: var(--color-text); }
+a.news-title:hover { color: var(--color-primary); }
+.text-link { font-size: 12px; color: var(--color-primary); border-bottom: 1px solid var(--color-primary); padding-bottom: 1px; }
+
+.staff-card {
+  background: #F8F8F8;
+  border-radius: 5px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+.staff-card-title { font-size: 13px; font-weight: 700; color: #1A3A2A; margin-bottom: 5px; }
+.staff-card-body { font-size: 12px; color: var(--color-text-light); line-height: 1.8; }
+
+/* フォトギャラリー */
+.photos-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.photo-gallery img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
+/* CTA */
+.section-cta { background: var(--color-primary); padding: 28px 0; }
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.cta-title { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.cta-sub { font-size: 13px; color: rgba(255,255,255,0.75); }
+.cta-btn {
+  background: #fff;
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 3px;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.cta-btn:hover { opacity: 0.9; color: var(--color-primary); }
+
+/* レスポンシブ */
 @media (max-width: 768px) {
-  .slider { height: 320px; }
-  .info-bar-inner { gap: 8px; }
-  .info-bar-link { margin-left: 0; }
-  .bnr-grid { grid-template-columns: 1fr; }
-  .bnr-item img { height: 160px; }
+  .hero-split { flex-direction: column; }
+  .hero-text { padding: 32px 20px; }
+  .hero-slider { width: 100%; height: 240px; }
+  .service-grid { grid-template-columns: 1fr; }
+  .info-columns { grid-template-columns: 1fr; gap: 32px; }
+  .photo-gallery { grid-template-columns: repeat(2, 1fr); }
+  .photo-gallery img { height: 100px; }
+  .photos-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .cta-inner { flex-direction: column; text-align: center; }
 }
 </style>
