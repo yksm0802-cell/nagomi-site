@@ -23,8 +23,8 @@ const recentNews = allNews
     <div class="hero-slider">
       <div class="hero-slides">
         <div class="hero-slide"><img src="/images/image2.jpg" alt="宮崎県小林市の自然豊かな風景" /></div>
-        <div class="hero-slide"><img src="/images/image1.jpg" alt="デイサービス 専門スタッフとご利用者様" /></div>
-        <div class="hero-slide"><img src="/images/image3.jpg" alt="和福祉サービスの施設" /></div>
+        <div class="hero-slide"><img src="/images/20250114_001.jpg" alt="施設の様子" /></div>
+        <div class="hero-slide"><img src="/images/grouphome_img001.jpg" alt="グループホームなごみ" /></div>
       </div>
       <div class="hero-dots">
         <span class="on"></span><span></span><span></span>
@@ -166,12 +166,13 @@ const recentNews = allNews
 /* ヒーロー分割 */
 .hero-split {
   display: flex;
-  min-height: 400px;
+  min-height: 460px;
 }
 .hero-text {
   flex: 1;
+  min-width: 0;
   background: #fff;
-  padding: 52px 48px;
+  padding: 44px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -181,20 +182,20 @@ const recentNews = allNews
   color: var(--color-primary);
   letter-spacing: 0.14em;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .hero-text h1 {
-  font-size: clamp(20px, 2.8vw, 30px);
+  font-size: clamp(18px, 2.4vw, 28px);
   font-weight: 700;
   color: #1A1A1A;
-  line-height: 1.55;
-  margin-bottom: 16px;
+  line-height: 1.6;
+  margin-bottom: 14px;
 }
 .hero-body {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-text-light);
   line-height: 2;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 .hero-actions {
   display: flex;
@@ -207,7 +208,7 @@ const recentNews = allNews
   color: #fff;
   font-size: 13px;
   font-weight: 700;
-  padding: 10px 24px;
+  padding: 10px 22px;
   border-radius: 3px;
   transition: opacity 0.2s;
 }
@@ -216,22 +217,20 @@ const recentNews = allNews
   border: 1.5px solid #1A3A2A;
   color: #1A3A2A;
   font-size: 13px;
-  padding: 9px 20px;
+  padding: 9px 18px;
   border-radius: 3px;
   transition: background 0.2s;
 }
 .btn-secondary:hover { background: var(--color-primary-light); }
 .hero-tel {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--color-primary);
-  margin-left: 8px;
 }
 .hero-tel a { color: var(--color-primary); }
 
 .hero-slider {
-  width: 420px;
-  flex-shrink: 0;
+  flex: 0 0 52%;
   position: relative;
   overflow: hidden;
 }
