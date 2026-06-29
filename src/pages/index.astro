@@ -64,8 +64,17 @@ const recentNews = allNews
           <div class="service-card-body">
             <div class="service-icon">🍵</div>
             <h3>元気村なごみ庵</h3>
-            <p>地域住民の皆さんの寄り合い所・茶飲ん場として開放。様々な会議の場としてもご利用可能。9:00〜22:00。</p>
-            <div class="service-note">ミニデイサービス・元気わくわく体操教室も実施</div>
+            <p>地域住民の皆さんの寄り合い所・茶飲ん場として開放。ミニデイサービス・元気わくわく体操教室も実施。9:00〜22:00。</p>
+            <span class="service-link">詳しく見る →</span>
+          </div>
+        </a>
+
+        <a href="/care-plan-center" class="service-card">
+          <div class="service-card-bar" style="background:#2980B9;"></div>
+          <div class="service-card-body">
+            <div class="service-icon">📋</div>
+            <h3>西小林ケアプランセンター</h3>
+            <p>ケアプランの作成・在宅介護のご相談はお気軽に。月〜金 8:30〜17:30、土 8:30〜12:30。</p>
             <span class="service-link">詳しく見る →</span>
           </div>
         </a>
@@ -282,8 +291,8 @@ const recentNews = allNews
 /* サービスカード */
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 .service-card {
   background: #fff;
@@ -404,7 +413,7 @@ a.news-title:hover { color: var(--color-primary); }
   .hero-split { flex-direction: column; }
   .hero-text { padding: 32px 20px; }
   .hero-slider { width: 100%; height: 240px; }
-  .service-grid { grid-template-columns: 1fr; }
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
   .info-columns { grid-template-columns: 1fr; gap: 32px; }
   .photo-gallery { grid-template-columns: repeat(2, 1fr); }
   .photo-gallery img { height: 100px; }

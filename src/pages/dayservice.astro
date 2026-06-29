@@ -112,7 +112,8 @@ import Layout from '../layouts/Layout.astro';
       <h2 class="section-title">料金について</h2>
       <p class="section-subtitle">利用時間帯に伴う利用料金は、介護報酬の告示上の額で1割〜3割の負担となります</p>
 
-      <table class="info-table fee-table" style="margin-bottom:32px;">
+      <div class="table-scroll">
+      <table class="info-table fee-table" style="margin-bottom:0;">
         <thead>
           <tr>
             <th>加算名称</th>
@@ -155,6 +156,7 @@ import Layout from '../layouts/Layout.astro';
           </tr>
         </tbody>
       </table>
+      </div>
 
       <div style="background:var(--color-primary-light); border-radius:12px; padding:24px; margin-bottom:48px; font-size:14px; line-height:2.2;">
         <strong>その他の費用について</strong>
@@ -183,6 +185,21 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
 .fee-table thead th { background: var(--color-primary); color: white; }
+.fee-table {
+  table-layout: fixed;
+  width: 100%;
+}
+.fee-table th:nth-child(1), .fee-table td:nth-child(1) { width: 34%; }
+.fee-table th:nth-child(2), .fee-table td:nth-child(2) { width: 12%; text-align: center; }
+.fee-table th:nth-child(3), .fee-table td:nth-child(3) { width: 9%; text-align: center; }
+.fee-table th:nth-child(4), .fee-table td:nth-child(4) { width: 9%; text-align: center; }
+.fee-table th:nth-child(5), .fee-table td:nth-child(5) { width: 9%; text-align: center; }
+.fee-table th:nth-child(6), .fee-table td:nth-child(6) { width: 27%; }
+.table-scroll { overflow-x: auto; margin-bottom: 32px; -webkit-overflow-scrolling: touch; }
+@media (max-width: 768px) {
+  .fee-table { font-size: 11px; min-width: 560px; }
+  .fee-table th, .fee-table td { padding: 8px 6px; }
+}
 
 .photo-hero-img {
   width: 100%;
