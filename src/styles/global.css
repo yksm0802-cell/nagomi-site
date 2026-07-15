@@ -8,11 +8,12 @@
   --color-accent: #F4A64A;
   --color-text: #2C3E50;
   --color-text-light: #666;
-  --color-border: #E0E0E0;
-  --color-bg: #FAFAFA;
+  --color-border: #E8E8E8;
+  --color-bg: #F7F8F6;
   --color-white: #FFFFFF;
-  --radius: 8px;
-  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-hover: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.14);
   --max-width: 1000px;
 }
 
@@ -100,30 +101,36 @@ img { max-width: 100%; height: auto; display: block; }
 .site-title-text { font-size: 15px; font-weight: 700; color: var(--color-text); }
 .site-title-text small { font-size: 11px; font-weight: 400; color: var(--color-text-light); display: block; }
 
-.nav-list { list-style: none; display: flex; gap: 2px; flex-wrap: wrap; }
+.nav-list { list-style: none; display: flex; gap: 2px; flex-wrap: wrap; align-items: center; }
 .nav-list a {
   display: block;
-  padding: 6px 10px;
+  padding: 6px 11px;
   font-size: 13px;
   font-weight: 500;
-  border-radius: 3px;
-  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  border: none;
   color: var(--color-text);
-  background: #FAFAFA;
+  background: transparent;
   transition: background 0.15s, color 0.15s;
 }
-.nav-list a:hover, .nav-list a.active {
+.nav-list a:hover {
   background: var(--color-primary-light);
   color: var(--color-primary);
-  border-color: var(--color-primary-light);
+  opacity: 1;
+}
+.nav-list a.active {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 700;
 }
 .nav-list .nav-new a {
   background: var(--color-accent);
   color: white;
-  border-color: var(--color-accent);
+  border-radius: 6px;
+  padding: 6px 14px;
   font-weight: 700;
 }
-.nav-list .nav-new a:hover { opacity: 0.85; }
+.nav-list .nav-new a:hover { background: #e09438; color: white; opacity: 1; }
 
 /* フッター電話 */
 .footer-tel { margin-top: 12px; font-size: 14px; font-weight: 700; color: white; }
@@ -165,11 +172,12 @@ img { max-width: 100%; height: auto; display: block; }
 .section { padding: 64px 0; }
 .section-alt { background: var(--color-white); }
 .section-title {
-  font-size: clamp(20px, 3vw, 28px);
+  font-size: clamp(22px, 3vw, 32px);
   font-weight: 700;
   color: var(--color-primary);
   text-align: center;
   margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 .section-subtitle {
   text-align: center;
@@ -180,10 +188,11 @@ img { max-width: 100%; height: auto; display: block; }
 .section-title::after {
   content: '';
   display: block;
-  width: 48px;
+  width: 36px;
   height: 3px;
-  background: var(--color-accent);
-  margin: 12px auto 0;
+  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  margin: 14px auto 0;
+  border-radius: 2px;
 }
 
 /* カード */
@@ -193,13 +202,23 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
-  transition: transform 0.2s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.card:hover { transform: translateY(-4px); }
-.card-body { padding: 24px; }
-.card-icon { font-size: 40px; margin-bottom: 12px; }
-.card h3 { font-size: 18px; color: var(--color-primary); margin-bottom: 8px; }
-.card p { font-size: 14px; color: var(--color-text-light); }
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.card-body { padding: 28px; }
+.card-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+  width: 60px;
+  height: 60px;
+  background: var(--color-primary-light);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card h3 { font-size: 18px; color: var(--color-primary); margin-bottom: 8px; font-weight: 700; }
+.card p { font-size: 14px; color: var(--color-text-light); line-height: 1.8; }
 
 /* ニュースリスト */
 .news-list { list-style: none; }
@@ -223,18 +242,51 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ページヘッダー */
 .page-hero {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #2D5E47 100%);
+  background: linear-gradient(135deg, #0F2219 0%, #1A3A2A 45%, var(--color-primary) 100%);
   color: white;
-  padding: 48px 20px;
+  padding: 60px 20px 72px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
-.page-hero h1 { font-size: clamp(22px, 4vw, 36px); font-weight: 700; }
-.page-hero p { margin-top: 8px; opacity: 0.85; font-size: 15px; }
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(244,166,74,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.page-hero::after {
+  content: '';
+  position: absolute;
+  left: -10%;
+  bottom: -28px;
+  width: 120%;
+  height: 56px;
+  background: var(--color-white);
+  border-radius: 50%;
+}
+.page-hero h1 {
+  font-size: clamp(24px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+.page-hero p {
+  margin-top: 10px;
+  opacity: 0.8;
+  font-size: 15px;
+  position: relative;
+  z-index: 1;
+}
 
 /* テーブル */
-.info-table { width: 100%; border-collapse: collapse; }
-.info-table th, .info-table td { padding: 14px 16px; border-bottom: 1px solid var(--color-border); text-align: left; font-size: 15px; }
+.info-table { width: 100%; border-collapse: collapse; box-shadow: var(--shadow); }
+.info-table th, .info-table td { padding: 15px 18px; border-bottom: 1px solid var(--color-border); text-align: left; font-size: 15px; }
+.info-table tr:last-child th, .info-table tr:last-child td { border-bottom: none; }
 .info-table th { width: 30%; background: var(--color-primary-light); color: var(--color-primary); font-weight: 700; }
+.info-table td { background: white; }
 
 /* フォーム */
 .form-group { margin-bottom: 20px; }
@@ -256,9 +308,9 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* フッター */
 .site-footer {
-  background: #1E3A2F;
+  background: #152B22;
   color: rgba(255,255,255,0.8);
-  padding: 48px 20px 24px;
+  padding: 56px 20px 24px;
 }
 .footer-inner { max-width: var(--max-width); margin: 0 auto; }
 .footer-top { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-bottom: 40px; }

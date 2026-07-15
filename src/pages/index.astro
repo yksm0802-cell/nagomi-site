@@ -42,7 +42,19 @@ const recentNews = allNews
         <a href="/dayservice" class="service-card">
           <div class="service-card-bar" style="background:var(--color-primary);"></div>
           <div class="service-card-body">
-            <div class="service-icon">🌸</div>
+            <div class="service-icon-wrap" style="background:var(--color-primary-light);">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="13" cy="13" r="5" fill="#3D7A5F"/>
+                <line x1="13" y1="2" x2="13" y2="5.5" stroke="#3D7A5F" stroke-width="2" stroke-linecap="round"/>
+                <line x1="13" y1="20.5" x2="13" y2="24" stroke="#3D7A5F" stroke-width="2" stroke-linecap="round"/>
+                <line x1="2" y1="13" x2="5.5" y2="13" stroke="#3D7A5F" stroke-width="2" stroke-linecap="round"/>
+                <line x1="20.5" y1="13" x2="24" y2="13" stroke="#3D7A5F" stroke-width="2" stroke-linecap="round"/>
+                <line x1="5.5" y1="5.5" x2="8" y2="8" stroke="#3D7A5F" stroke-width="2" stroke-linecap="round"/>
+                <line x1="18" y1="18" x2="20.5" y2="20.5" stroke="#3D7A5F" stroke-width="2" stroke-linecap="round"/>
+                <line x1="5.5" y1="20.5" x2="8" y2="18" stroke="#3D7A5F" stroke-width="2" stroke-linecap="round"/>
+                <line x1="18" y1="8" x2="20.5" y2="5.5" stroke="#3D7A5F" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
             <h3>デイサービス</h3>
             <p>自宅から通って、食事・入浴・機能訓練を受けられる日帰りの通所介護。月〜土・祝日も営業。定員18名。</p>
             <span class="service-link">詳しく見る →</span>
@@ -52,7 +64,11 @@ const recentNews = allNews
         <a href="/grouphome" class="service-card">
           <div class="service-card-bar" style="background:var(--color-primary);"></div>
           <div class="service-card-body">
-            <div class="service-icon">🏠</div>
+            <div class="service-icon-wrap" style="background:var(--color-primary-light);">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12L13 4L23 12V22H16V16H10V22H3V12Z" stroke="#3D7A5F" stroke-width="2" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
             <h3>グループホーム</h3>
             <p>認知症の方が少人数で専門スタッフと共に家庭的な雰囲気の中で暮らせる共同生活介護。なごみ・ひなたの2施設。24時間・年中無休。</p>
             <span class="service-link">詳しく見る →</span>
@@ -62,7 +78,13 @@ const recentNews = allNews
         <a href="/nagomi-an" class="service-card">
           <div class="service-card-bar" style="background:var(--color-accent);"></div>
           <div class="service-card-body">
-            <div class="service-icon">🍵</div>
+            <div class="service-icon-wrap" style="background:#FEF3E6;">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="9" cy="11" r="3.5" stroke="#F4A64A" stroke-width="2"/>
+                <circle cx="17" cy="11" r="3.5" stroke="#F4A64A" stroke-width="2"/>
+                <path d="M2 22c0-3.314 3.134-6 7-6h8c3.866 0 7 2.686 7 6" stroke="#F4A64A" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
             <h3>元気村なごみ庵</h3>
             <p>地域住民の皆さんの寄り合い所・茶飲ん場として開放。ミニデイサービス・元気わくわく体操教室も実施。9:00〜22:00。</p>
             <span class="service-link">詳しく見る →</span>
@@ -72,7 +94,14 @@ const recentNews = allNews
         <a href="/care-plan-center" class="service-card">
           <div class="service-card-bar" style="background:#2980B9;"></div>
           <div class="service-card-body">
-            <div class="service-icon">📋</div>
+            <div class="service-icon-wrap" style="background:#EBF4FB;">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="5" y="3" width="16" height="20" rx="2" stroke="#2980B9" stroke-width="2"/>
+                <line x1="9" y1="9" x2="17" y2="9" stroke="#2980B9" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="9" y1="13" x2="17" y2="13" stroke="#2980B9" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="9" y1="17" x2="14" y2="17" stroke="#2980B9" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
             <h3>西小林ケアプランセンター</h3>
             <p>ケアプランの作成・在宅介護のご相談はお気軽に。月〜金 8:30〜17:30、土 8:30〜12:30。</p>
             <span class="service-link">詳しく見る →</span>
@@ -161,10 +190,14 @@ const recentNews = allNews
     <div class="container">
       <div class="cta-inner">
         <div>
+          <p class="cta-label">CONTACT</p>
           <h2 class="cta-title">見学・お問い合わせはお気軽にどうぞ</h2>
           <p class="cta-sub">電話またはご来所にてお受けします</p>
         </div>
-        <a href="tel:0984-27-2820" class="cta-btn">📞 0984-27-2820</a>
+        <a href="tel:0984-27-2820" class="cta-btn">
+          <span class="cta-btn-icon">📞</span>
+          <span class="cta-btn-num">0984-27-2820</span>
+        </a>
       </div>
     </div>
   </section>
@@ -296,20 +329,28 @@ const recentNews = allNews
 }
 .service-card {
   background: #fff;
-  border-radius: 6px;
+  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid var(--color-border);
+  border: 1px solid #EBEBEB;
   display: block;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-.service-card-bar { height: 5px; }
-.service-card-body { padding: 20px 18px; }
-.service-icon { font-size: 32px; margin-bottom: 10px; }
-.service-card h3 { font-size: 17px; font-weight: 700; color: #1A1A1A; margin-bottom: 10px; }
-.service-card p { font-size: 13px; color: var(--color-text-light); line-height: 1.8; margin-bottom: 10px; }
+.service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.service-card-bar { height: 4px; }
+.service-card-body { padding: 22px 20px 24px; }
+.service-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.service-card h3 { font-size: 16px; font-weight: 700; color: #1A1A1A; margin-bottom: 8px; }
+.service-card p { font-size: 13px; color: var(--color-text-light); line-height: 1.8; margin-bottom: 12px; }
 .service-note {
   font-size: 12px;
   color: var(--color-primary);
@@ -376,37 +417,48 @@ a.news-title:hover { color: var(--color-primary); }
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
+  gap: 10px;
 }
 .photo-gallery img {
   width: 100%;
-  height: 110px;
+  height: 160px;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.photo-gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
 /* CTA */
-.section-cta { background: var(--color-primary); padding: 28px 0; }
+.section-cta { background: linear-gradient(135deg, #0F2219 0%, var(--color-primary) 100%); padding: 40px 0; }
 .cta-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 20px;
 }
-.cta-title { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
-.cta-sub { font-size: 13px; color: rgba(255,255,255,0.75); }
+.cta-label { font-size: 11px; letter-spacing: 0.15em; color: rgba(255,255,255,0.5); font-weight: 700; margin-bottom: 6px; }
+.cta-title { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+.cta-sub { font-size: 13px; color: rgba(255,255,255,0.7); }
 .cta-btn {
   background: #fff;
   color: var(--color-primary);
-  font-size: 15px;
   font-weight: 700;
-  padding: 12px 28px;
-  border-radius: 3px;
+  padding: 14px 32px;
+  border-radius: 50px;
   white-space: nowrap;
-  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
 }
-.cta-btn:hover { opacity: 0.9; color: var(--color-primary); }
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); color: var(--color-primary); }
+.cta-btn-icon { font-size: 18px; }
+.cta-btn-num { font-size: 18px; letter-spacing: 0.02em; }
 
 /* レスポンシブ */
 @media (max-width: 768px) {
